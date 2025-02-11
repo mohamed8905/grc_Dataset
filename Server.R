@@ -51,10 +51,6 @@ server <- function(input, output) {
            pch = 16, cex = 0.85, title = "Total spending", horiz = TRUE)
   })
   
-  output$distribution <- renderPlot({
-    boxplot(grc$total)
-  })
-  
   output$fviz_cluster <- renderPlot({
     km = kmeans(df_scaled, input$slide)
     
