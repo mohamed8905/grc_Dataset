@@ -1,3 +1,4 @@
+library("readr")
 library("dplyr")
 library("factoextra")
 library("arules")
@@ -5,7 +6,7 @@ library("shiny")
 library("shinythemes")
 library("DT")
 
-#entering dataset path
+#importing dataset
 grc <- read.csv("grc.csv")
 
 ui <- navbarPage(
@@ -49,6 +50,6 @@ ui <- navbarPage(
   )
 )
 # to run the app
-source("server.R")
+source("Server.R")
 shinyApp(ui = ui, server = server)
 

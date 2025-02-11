@@ -1,7 +1,6 @@
-
 server <- function(input, output) {
   
-  grc <- grc %>% distinct(.keep_all = TRUE)
+  grc <- read.csv("grc.csv") %>% distinct(.keep_all = TRUE)
   pie_values <- round(c(sum(grc$paymentType == "Cash") * 100 / 9833, sum(grc$paymentType == "Credit") * 100 / 9833), digits = 2)
   labels <- c("Cash", "Credit")
   df_total_byAge <- grc %>% group_by(age) %>% summarise(total_spend = sum(total))
